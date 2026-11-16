@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mira Digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="term">
+    <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+    <span class="file">mira.js</span>
+    <span class="school">CETI PROF. JOSÉ AMÁVEL</span>
+  </div>
+
+  <div class="stage" id="stage">
+    <canvas id="cv" aria-label="Sala de servidores com alvos"></canvas>
+
+    <div class="hud" id="hud" hidden>
+      <div class="hud-left">
+        <span class="chipbox"><b id="hudScore">0</b><small>pontos</small></span>
+        <span class="chipbox wave"><b id="hudTime">60</b><small>segundos</small></span>
+        <span class="chipbox power"><b id="hudAmmo">8/8</b><small>munição</small></span>
+      </div>
+      <div class="hud-right">
+        <button type="button" class="icon" id="btnSound" aria-label="Som ligado">🔊</button>
+        <button type="button" class="icon" id="btnPause" aria-label="Pausar">⏸</button>
+      </div>
+    </div>
+    <button type="button" class="btn-reload" id="btnReload" hidden>↻ Recarregar</button>
+
+    <div class="overlay" id="startScreen">
+      <div class="box">
+        <p class="eyebrow">Tiro ao alvo</p>
+        <h1>Mira <span>Digital</span></h1>
+        <p class="lead">Invasores apareceram na sala de servidores! Você tem 60 segundos para acertar o máximo que conseguir.</p>
+        <ul class="legend">
+          <li><i class="sw virus"></i><span><b>Vírus</b> +10</span></li>
+          <li><i class="sw popup"></i><span><b>Pop-up falso</b> +15</span></li>
+          <li><i class="sw drone"></i><span><b>Drone hacker</b> +25, ele voa!</span></li>
+          <li><i class="sw gold"></i><span><b>Chip dourado</b> +50, bem rápido</span></li>
+          <li><i class="sw friend"></i><span><b>Robô amigo</b> não atire! −30</span></li>
+        </ul>
+        <div class="controls">
+          <p><b>Celular:</b> toque no alvo para atirar. Toque em <b>Recarregar</b> quando a munição acabar.</p>
+          <p><b>Computador:</b> mire com o mouse e clique. <b>R</b> ou botão direito recarrega.</p>
+          <p>Acertos seguidos multiplicam os pontos!</p>
+        </div>
+        <button type="button" class="play" id="btnPlay">▶ Jogar</button>
+        <p class="best" id="bestStart">Recorde: 0</p>
+      </div>
+    </div>
+
+    <div class="overlay" id="pauseScreen" hidden>
+      <div class="box small">
+        <h2>Pausado</h2>
+        <button type="button" class="play" id="btnResume">▶ Continuar</button>
+      </div>
+    </div>
+
+    <div class="overlay" id="overScreen" hidden>
+      <div class="box">
+        <p class="eyebrow" id="overTag">Tempo esgotado</p>
+        <h2 id="overTitle">Fim da missão!</h2>
+        <div class="stats">
+          <div><b id="overScore">0</b><small>pontos</small></div>
+          <div><b id="overHits">0</b><small>acertos</small></div>
+          <div><b id="overAcc">0%</b><small>precisão</small></div>
+        </div>
+        <p class="lead" id="overNote"></p>
+        <p class="best" id="overBest">Recorde: 0</p>
+        <button type="button" class="play" id="btnAgain">↻ Jogar de novo</button>
+      </div>
+    </div>
+  </div>
+
+  <p class="foot">Toque ou clique nos alvos · Não acerte o robô amigo</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
